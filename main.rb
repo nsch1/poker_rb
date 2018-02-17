@@ -1,13 +1,10 @@
-require "./card.rb"
-require "./deck.rb"
-require "./player.rb"
+require "./table"
 
-dealer = Dealer.new
-player = Player.new("Paul")
+dealer = Table.dealer
 
-dealer.shuffle
+puts "Please enter your name: "
+player_name = gets.chomp
 
-dealer.deal_card(player)
+player = Table.add_player(player_name)
 
-puts dealer.deck.length
-puts player.hand
+puts player.name

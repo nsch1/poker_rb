@@ -1,3 +1,5 @@
+require "./card"
+
 class Dealer
 	attr_accessor :deck
 	
