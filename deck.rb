@@ -14,8 +14,16 @@ class Dealer
 		end
 	end
 
-	def deal_card(player)
-		player.receive_card(@deck.pop)
+	def deal_all_cards
+		2.times do
+			Table.players.each do |player|
+				deal_card(player)
+			end
+		end
+	end
+
+	def deal_card(place)
+		place.receive_card(@deck.pop)
 	end
 
 	private

@@ -3,7 +3,7 @@ require "./deck"
 
 class Table
 	@@dealer = Dealer.new
-	@@player = "null"
+	@@players = [Player.new("Dealer")]
 	@@field = []
 	@@discard_pile = []
 
@@ -11,7 +11,12 @@ class Table
 		@@dealer
 	end
 
+	def self.players
+		@@players
+	end
+
 	def self.add_player(name)
-		@@player = Player.new(name)
+		@@players << Player.new(name)
+		@@players.last
 	end
 end
