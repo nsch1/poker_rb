@@ -15,11 +15,11 @@ class Player
   end
 
   def parse_card_rank(card)
-  	ranks = ["Jack", "Queen", "King", "Ace"]
-  	if card.rank >= 11
-  		ranks[card.rank - 11]
-  	else
-  		card.rank
-  	end
+    ranks = ["Jack", "Queen", "King", "Ace"]
+    if card.rank >= 11
+      ranks[card.rank - 11]
+    else
+      card.rank
+    end
   end
 end
