@@ -29,8 +29,8 @@ dealer.burn_card
 dealer.put_cards(3)
 
 puts           "Flop: "
-puts field =  "Field: " \
-                "#{table.field[0].rank_name} of " \
+puts field =   "Field: " \
+               "#{table.field[0].rank_name} of " \
                "#{table.field[0].suit} | " \
                "#{table.field[1].rank_name} of " \
                "#{table.field[1].suit} | " \
@@ -42,16 +42,16 @@ dealer.burn_card
 dealer.put_cards(1)
 
 puts           "Turn: "
-puts field += "#{table.field[3].rank_name} of " \
-              "#{table.field[3].suit} | "
+puts field +=  "#{table.field[3].rank_name} of " \
+               "#{table.field[3].suit} | "
 puts
 
 dealer.burn_card
 dealer.put_cards(1)
 
 puts           "River: " 
-puts field += "#{table.field[4].rank_name} of " \
-              "#{table.field[4].suit}"
+puts field +=  "#{table.field[4].rank_name} of " \
+               "#{table.field[4].suit}"
 puts
 
 puts           "Dealer has " \
