@@ -27,3 +27,22 @@ puts "Flop: " \
 		 "#{table.field[0].rank_name} of #{table.field[0].suit} | " \
 		 "#{table.field[1].rank_name} of #{table.field[1].suit} | " \
 		 "#{table.field[2].rank_name} of #{table.field[2].suit} | "
+
+dealer.burn_card
+dealer.put_cards(1)
+
+puts "Turn: " \
+		 "#{table.field[3].rank_name} of #{table.field[3].suit}"
+
+dealer.burn_card
+dealer.put_cards(1)
+
+puts "River: " \
+		 "#{table.field[4].rank_name} of #{table.field[4].suit}"
+puts
+
+puts "Dealer has " \
+		 "#{opponent.hand[0].rank_name} of " \
+		 "#{opponent.hand[0].suit} & " \
+		 "#{opponent.hand[1].rank_name} of " \
+		 "#{opponent.hand[1].suit}."
