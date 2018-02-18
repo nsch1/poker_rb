@@ -1,11 +1,12 @@
 require "./card"
+require "./player"
 
 class Dealer
   attr_accessor :deck
   
   def initialize
     @deck = []
-    fill_deck_with_cards    
+    fill_deck_with_cards
   end
 
   def shuffle
@@ -14,9 +15,9 @@ class Dealer
     end
   end
 
-  def deal_all_cards
+  def deal_all_cards(table)
     2.times do
-      Table.players.each do |player|
+      table.players.each do |player|
         deal_card(player)
       end
     end

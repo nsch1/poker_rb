@@ -2,21 +2,17 @@ require "./player"
 require "./deck"
 
 class Table
-  @@dealer = Dealer.new
-  @@players = [Player.new("Dealer")]
-  @@field = []
-  @@discard_pile = []
+  attr_accessor :dealer, :players, :field, :discard_pile
 
-  def self.dealer
-    @@dealer
+  def initialize
+    @dealer = Dealer.new
+    @players = [Player.new("Dealer")]
+    @field = []
+    @discard_pile = []
   end
 
-  def self.players
-    @@players
-  end
-
-  def self.add_player(name)
-    @@players << Player.new(name)
-    @@players.last
+  def seat_player(name)
+    @players << Player.new(name)
+    @players.last
   end
 end
