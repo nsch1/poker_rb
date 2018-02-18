@@ -2,29 +2,30 @@ require "./card"
 require "./player"
 
 class Dealer
-  attr_accessor :deck
+  attr_accessor :deck, :current_table
   
   def initialize
     @deck = []
+    @current_table
     fill_deck_with_cards
   end
 
   def shuffle
     for c in (1..12) do
-      @deck = @deck.shuffle
+      @deck = deck.shuffle
     end
   end
 
-  def deal_all_cards(table)
-    2.times do
-      table.players.each do |player|
+  def deal_cards(amount)
+    amount.times do
+      current_table.players.each do |player|
         deal_card(player)
       end
     end
   end
 
-  def deal_card(place)
-    place.receive_card(@deck.pop)
+  def burn_card
+    current_table.discard_pile << deck.pop
   end
 
   private
@@ -37,5 +38,9 @@ class Dealer
           @deck << Card.new(suit, rank)
         end
       end
+    end
+
+    def deal_card(place)
+      place.receive_card(deck.pop)
     end
 end
