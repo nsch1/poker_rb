@@ -24,6 +24,12 @@ class Dealer
     end
   end
 
+  def put_cards(amount)
+    amount.times do
+      current_table.put_card_on_field(deck.pop)
+    end
+  end
+
   def burn_card
     current_table.discard_pile << deck.pop
   end
